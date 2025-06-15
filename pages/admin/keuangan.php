@@ -96,11 +96,8 @@ $recent_transactions = mysqli_query($conn, "SELECT * FROM keuangan ORDER BY crea
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="distribusi_list.php">
+                        <a class="nav-link" href="distribusi_list.php">
                             <i class="fas fa-hand-holding-heart me-1"></i>Distribusi
-                            <?php if ($stats['belum_diambil'] > 0): ?>
-                                <span class="badge bg-warning ms-1"><?= $stats['belum_diambil'] ?></span>
-                            <?php endif; ?>
                         </a>
                     </li>
                     <li class="nav-item">

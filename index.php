@@ -3,10 +3,10 @@ session_start();
 include "config/koneksi.php";
 
 if (isset($_POST['login'])) {
-    $username = $_POST['username'];
+    $nik = $_POST['nik'];
     $password = $_POST['password'];
 
-    $query = mysqli_query($conn, "SELECT * FROM users WHERE username='$username'");
+    $query = mysqli_query($conn, "SELECT * FROM users WHERE nik='$nik'");
     $user = mysqli_fetch_assoc($query);
 
     if ($user && password_verify($password, $user['password'])) {
@@ -67,10 +67,10 @@ if (isset($_POST['login'])) {
                             <form method="POST">
                                 <div class="mb-3">
                                     <label for="username" class="form-label">
-                                        <i class="fas fa-user me-2"></i>Username
+                                        <i class="fas fa-user me-2"></i>NIK
                                     </label>
-                                    <input type="text" class="form-control" id="username" name="username"
-                                        placeholder="Masukkan username" required>
+                                    <input type="text" class="form-control" id="nik" name="nik"
+                                        placeholder="Masukkan NIK" required>
                                 </div>
 
                                 <div class="mb-4">
